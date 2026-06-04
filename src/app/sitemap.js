@@ -1,6 +1,6 @@
 // src/app/sitemap.js
-export default async function sitemap() {
-  const baseUrl = "https://no-login-tools.com"; 
+export default function sitemap() {
+  const baseUrl = "https://no-login-tools.com";
 
   const routes = [
     "",
@@ -19,8 +19,8 @@ export default async function sitemap() {
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "monthly",
+    lastModified: new Date(), // خروجی استاندارد تاریخ برای گوگل
+    changeFrequency: 'monthly', // مقدار کاملاً استاندارد و مجاز کوچک
     priority: route === "" ? 1.0 : 0.8,
   }));
 }
