@@ -1,0 +1,57 @@
+.footer-parent{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--txt2);
+    width: 101%;    
+}
+.f-tools-dropDown-menu{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    position: static;
+    width: 100%;
+    gap: 20px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--txt2);
+}
+.f-PDFtabs{
+    border-top: 1px solid var(--secondary);
+}
+.f-imageTabs{
+    border-top: 1px solid var(--secondary);
+}
+.icon{
+    width:15px;
+}
+.f-menuTitle{
+    color: var(--secondary);
+    font-size: 14px;
+    display: flex;
+    gap: 3px;
+    padding: 18px 12px;
+}
+
+.f-tools-dropDown-option{
+    background-color: var(--txt2);
+    padding: 15px 8px;
+}
+.f-tools-dropDown-option a{
+    color: var(--secondary);
+    background-color: var(--txt2);
+    padding: 15px 8px;
+    font-weight: 500;
+}
+.f-tools-dropDown-option:hover{
+    filter: brightness(0.85);
+}
+.contact-parent{
+    display: flex;
+    color: var(--secondary);
+    justify-content: space-around;
+    padding: 15px 25px;
+    border-top: 1px solid var(--secondary);
+    filter: brightness(0.75);
+
+}
