@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import { GoogleAnalytics } from 'next/third-parties/google';
+import Script from "next/script"; 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -24,8 +24,19 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         <main>{children}</main>
-        
-        <GoogleAnalytics gaId="G-4NJG903Z4E" />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4NJG903Z4E"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4NJG903Z4E');
+          `}
+        </Script>
       </body>
     </html>
   );
