@@ -1,7 +1,11 @@
 import Navbar from "@/components/navbar";
 import Script from "next/script"; 
+import CookieConsent from "@/components/CookieConsent";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +28,9 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         <main>{children}</main>
-
+        <CookieConsent />
+        <Analytics />
+        <SpeedInsights />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4NJG903Z4E"
           strategy="afterInteractive"
