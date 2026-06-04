@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar";
+import { GoogleAnalytics } from 'next/third-parties/google';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,18 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "convert files online",
-  description: "just drag your files and drop them, select format and hit convert. thas is it!",
+  title: "Convert Files Online",
+  description: "Just drag your files and drop them, select format and hit convert. That's it!",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+    <html lang="en" dir="ltr">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
-      {
-        children
-      }</body>
+        <main>{children}</main>
+        
+        <GoogleAnalytics gaId="G-4NJG903Z4E" />
+      </body>
     </html>
   );
 }
