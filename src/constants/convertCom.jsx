@@ -55,7 +55,6 @@ const ConverterPage = ({ title, defaultFormat, textContent }) => {
             <h1>drop your files here</h1>
             <div>or <span style={{ color: 'var(--highlight)' }}>click</span> to browse</div>
           </div>
-          <div style={{ fontSize: '0.8rem', opacity: 0.5 }}>up to {MAX_FILES} files</div>
         </div>
       )}
 
