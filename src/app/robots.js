@@ -5,6 +5,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://yourdomain.com/sitemap.xml",
+    sitemap: "https://no-login-tools.com/sitemap.xml",
   };
 }

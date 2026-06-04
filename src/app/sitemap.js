@@ -1,6 +1,6 @@
 // src/app/sitemap.js
 export default async function sitemap() {
-  const baseUrl = "https://yourdomain.com"; // آدرس سایت خودت را بزن
+  const baseUrl = "https://no-login-tools.com"; 
 
   const routes = [
     "",
