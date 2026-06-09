@@ -1,0 +1,30 @@
+.blogPostContainer {
+  width: 100%;
+  max-width: 800px;
+  overflow: visible;
+  margin: 0 auto;
+  padding: 0rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.blogBackBtn {
+  position: relative;
+  top:  -10;
+  left: -5;
+  color: var(--txt-muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  width: fit-content;
+  z-index: 10;
+}
+
+.blogBackBtn:hover {
+  color: var(--accent);
+}
+
+.blogArticleWrapper {
+  width: 100%;
+}

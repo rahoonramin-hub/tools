@@ -13,11 +13,12 @@ const Navbar = () => {
         <div className='navbarMenu'>
             <ul className='menuList'>
                 <li className={isToolsHover? 'menuOption MOhover':'menuOption'} onClick={()=>{setIsToolsHover(!isToolsHover)}}>Tools</li>
+                <li className='menuOption'><Link href={'/blog/'}>Blogs</Link></li>
                 <li className='menuOption'><Link href={'/about/'}>about</Link></li>
             </ul>
         </div>
         <div className='navbarIcons'>
-          <h1><Link  style={{color:'var(--highlight)', marginRight:25}} href={'/'}>no-login-tools.com</Link></h1>
+          <h1><Link  className='siteAddressName' href={'/'}>no-login-tools.com</Link></h1>
         </div>
     </div>
     {isToolsHover &&

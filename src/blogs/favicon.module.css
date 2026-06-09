@@ -1,0 +1,48 @@
+.blogPostContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0;
+  align-items: center;
+}
+
+.blogPostHeaderIMG{
+}
+.blogPostHeader h1 {
+  margin: 0px auto;
+  width: 400;
+  font-size: 2rem;
+  color: var(--txt);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blogPostCard {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  flex: 1;
+}
+
+/* کلاس‌های کمکی برای کارت‌ها */
+.primary {
+  border-left: 4px solid var(--accent);
+}
+
+.secondary {
+  border-left: 4px solid var(--secondary);
+}
+
+.blogPostCard h2, .blogPostCard h3 {
+  color: var(--txt);
+  margin-bottom: 0.75rem;
+}
+
+.blogPostCard p {
+  color: var(--txt-muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
