@@ -1,27 +1,51 @@
 import Link from "next/link";
+import Image from "next/image";
 import { blogs } from "@/blogs/blogs";
-import styles from "./blog.module.css"; // 👈 ایمپورت ماژول
+import styles from "./blog.module.css";
+
+export const metadata = {
+  title: "Blog",
+  description: "Articles about web development, SEO, and design.",
+};
 
 export default function BlogPage() {
   return (
-    <div className={styles.blogContainer}>
-      <header className={styles.blogIdxHeader}>
-        <span className="abt-tag">OUR BLOG</span> {/* کلاس عمومی ابوت */}
-        <h1 className={styles.blogIdxTitle}>Latest Articles & Guides</h1>
-        <p className={styles.blogIdxSub}>Tips and tricks to optimize your digital workflow.</p>
-        <div className="abt-hero-line"></div>
-      </header>
+    <main className={styles.page}>
+      <h1 className={styles.pageTitle}>Blog</h1>
+      <p className={styles.pageDesc}>Guides and tips for building better websites.</p>
 
-      <div className={styles.blogGrid}>
+      <div className={styles.grid}>
         {blogs.map((post) => (
-          <Link href={`/blog/${post.slug}`} key={post.slug} className={styles.blogCard}>
-            <span className={styles.blogCardDate}>{post.date}</span>
-            <h2 className={styles.blogCardTitle}>{post.title}</h2>
-            <p className={styles.blogCardDesc}>{post.description}</p>
-            <span className={styles.blogCardMore}>Read Article →</span>
+          <Link key={post.slug} href={`/blog/${post.slug}`} className={styles.card}>
+            {post.coverImage && (
+              <div className={styles.cardImgWrap}>
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 600px) 100vw, 400px"
+                  className={styles.cardImg}
+                />
+              </div>
+            )}
+            <div className={styles.cardBody}>
+              {post.tags && (
+                <div className={styles.tagRow}>
+                  {post.tags.map((t) => (
+                    <span key={t} className={styles.tag}>{t}</span>
+                  ))}
+                </div>
+              )}
+              <h2 className={styles.cardTitle}>{post.title}</h2>
+              <p className={styles.cardDesc}>{post.description}</p>
+              <div className={styles.cardMeta}>
+                <span>{post.date}</span>
+                {post.readTime && <span>{post.readTime}</span>}
+              </div>
+            </div>
           </Link>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

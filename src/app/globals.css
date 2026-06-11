@@ -131,7 +131,7 @@ body{
 
 @media (max-width: 600px) {
   .abt-stats-row { grid-template-columns: repeat(2, 1fr); }
-  .siteAddressName{ display: none;}
+  .siteAddressName{ display: none ;}
 
 }
 

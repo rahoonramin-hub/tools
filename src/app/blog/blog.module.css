@@ -1,77 +1,112 @@
-.blogContainer {
-  width: 100%;
-  max-width: 800px;
+.page {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  padding: 2.5rem 1rem;
 }
 
-.blogIdxHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-}
-
-.blogIdxTitle {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+.pageTitle {
+  font-size: 28px;
+  font-weight: 600;
   color: var(--txt);
-  font-weight: 700;
+  margin-bottom: .5rem;
 }
 
-.blogIdxSub {
-  color: var(--txt-muted);
+.pageDesc {
   font-size: 15px;
+  color: var(--txt-muted);
+  margin-bottom: 2rem;
 }
 
-.blogGrid {
+.grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
 }
 
-.blogCard {
+.card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  overflow: hidden;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  text-decoration: none;
-  transition: all 0.25s ease;
+  transition: border-color .15s, box-shadow .15s;
 }
 
-.blogCard:hover {
-  transform: translateY(-2px);
+.card:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow);
 }
 
-.blogCardDate {
-  font-size: 12px;
-  color: var(--highlight);
+.cardImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.cardImg {
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+}
+
+.tagRow {
+  display: flex;
+  gap: .375rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
   font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid rgba(129, 140, 248, 0.25);
 }
 
-.blogCardTitle {
-  font-size: 1.25rem;
+.cardTitle {
+  font-size: 15px;
+  font-weight: 500;
   color: var(--txt);
-  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
 }
 
-.blogCardDesc {
-  font-size: 14px;
+.cardDesc {
+  font-size: 13px;
   color: var(--txt-muted);
   line-height: 1.6;
+  margin: 0;
+  /* نشان دادن حداکثر ۲ خط */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.blogCardMore {
-  font-size: 13px;
-  color: var(--accent);
-  font-weight: 600;
-  margin-top: 0.5rem;
+.cardMeta {
+  display: flex;
+  gap: .75rem;
+  font-size: 12px;
+  color: var(--txt-muted);
+  margin-top: auto;
+  padding-top: .5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

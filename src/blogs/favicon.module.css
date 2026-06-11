@@ -1,48 +1,269 @@
-.blogPostContent {
+.pageWrapper {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  align-items: start;
+}
+
+/* ── TOC ── */
+.tocCol { position: sticky; top: 1.5rem; }
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.tocTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--txt-muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: .75rem;
+}
+.tocLink {
+  display: block;
+  font-size: 13px;
+  color: var(--txt-muted);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  margin-bottom: 2px;
+  transition: all .15s;
+}
+.tocLink:hover,
+.tocLink.active {
+  color: var(--txt);
+  background: var(--surface-2);
+  border-left-color: var(--accent);
+}
+
+/* ── Hero ── */
+.heroTitle {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--txt);
+  line-height: 1.3;
+  margin-bottom: .5rem;
+}
+.heroSub {
+  font-size: 15px;
+  color: var(--txt-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.ctaBar { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--txt);
+  text-decoration: none;
+  transition: background .15s;
+}
+.ctaBtn:hover { background: var(--surface-2); }
+.ctaBtnPrimary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.ctaBtnPrimary:hover { background: var(--accent-hover); }
+
+/* ── Hero Image — عکس فشرده نمیشه ── */
+.heroImgWrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+  background: var(--surface);
+}
+.heroImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: contain;   /* ← تصویر crop یا stretch نمیشه */
+}
+
+/* ── Section ── */
+.section { margin-bottom: 2.5rem; scroll-margin-top: 1.5rem; }
+.sectionHeading {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--txt);
+  margin-bottom: .75rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Steps ── */
+.stepList { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+.stepItem {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .875rem 1rem;
+}
+.stepNum {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.stepTitle { font-size: 14px; font-weight: 500; color: var(--txt); margin-bottom: 3px; }
+.stepDesc  { font-size: 13px; color: var(--txt-muted); line-height: 1.6; margin: 0; }
+
+/* ── Platform Cards (Portrait) ── */
+.secondaryCardParent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .75rem;
+}
+.secCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 0;
   align-items: center;
+  text-align: center;
+  gap: .625rem;
+}
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cardLabel { font-size: 13px; font-weight: 500; color: var(--txt); }
+.cardDesc  { font-size: 12px; color: var(--txt-muted); line-height: 1.5; margin: 0; }
+.cardSizes { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+.szPill {
+  font-size: 11px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 8px;
+  color: var(--txt-muted);
 }
 
-.blogPostHeaderIMG{
+/* ── Sizes Table ── */
+.sizeTable { width: 100%; border-collapse: collapse; font-size: 13px; }
+.sizeTable th {
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 500;
+  color: var(--txt-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  border-bottom: 1px solid var(--border);
 }
-.blogPostHeader h1 {
-  margin: 0px auto;
-  width: 400;
-  font-size: 2rem;
+.sizeTable td {
+  padding: 8px 10px;
   color: var(--txt);
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  border-bottom: 1px solid var(--border);
 }
+.sizeTable tr:last-child td { border-bottom: none; }
+.code {
+  font-family: monospace;
+  font-size: 12px;
+  background: var(--surface-2);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.badgeBrowser { background: #e0e7ff; color: #3730a3; }
+.badgeApple   { background: #d1fae5; color: #065f46; }
+.badgeAndroid { background: #fef3c7; color: #92400e; }
+.badgePWA     { background: #ede9fe; color: #5b21b6; }
 
-.blogPostCard {
+/* ── Code Block ── */
+.codeWrap {
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
-  flex: 1;
+  overflow: hidden;
 }
-
-/* کلاس‌های کمکی برای کارت‌ها */
-.primary {
-  border-left: 4px solid var(--accent);
+.codeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
 }
-
-.secondary {
-  border-left: 4px solid var(--secondary);
-}
-
-.blogPostCard h2, .blogPostCard h3 {
-  color: var(--txt);
-  margin-bottom: 0.75rem;
-}
-
-.blogPostCard p {
+.codeLang { font-size: 11px; color: var(--txt-muted); font-family: monospace; }
+.copyBtn {
+  font-size: 12px;
   color: var(--txt-muted);
-  font-size: 15px;
-  line-height: 1.75;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: color .15s;
+}
+.copyBtn:hover { color: var(--txt); }
+.pre {
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.7;
+  font-family: monospace;
+  color: var(--txt);
+  margin: 0;
+}
+
+/* ── Why Box ── */
+.whyBox {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-light);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  font-size: 13px;
+  color: var(--txt-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.bodyText { font-size: 13px; color: var(--txt-muted); line-height: 1.7; }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .pageWrapper {
+    grid-template-columns: 1fr;
+  }
+  .tocCol { display: none; }
+  .secondaryCardParent {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroTitle { font-size: 20px; }
 }
