@@ -8,7 +8,7 @@ export const blogs = [
     date: "June 2026",
     readTime: "4 min read",
     tags: ["SEO", "HTML", "Branding"],
-    coverImage: "/favicon-sizes.webp",
+    coverImage: "/favicon-sizes.png",
     component: Favicon,
   },
 ];
